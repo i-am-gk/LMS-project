@@ -45,14 +45,29 @@ body {
     align-items: center;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+}
+
 .nav-logo h2 {
     color: #2c3e50;
     font-size: 1.8rem;
     font-weight: 700;
+    margin: 0;
 }
 
 .nav-logo a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-menu {
@@ -122,7 +137,7 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #05b68f 0%, #242424 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -471,12 +486,17 @@ body {
     gap: 2rem;
     flex-wrap: wrap;
 }
+.cta-features .feature-item span {
 
+    color: #020202;       /* example: dark gray */
+ 
+  }
+  
 .feature-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .feature-item i {
@@ -729,4 +749,443 @@ body {
 
 .pulse {
     animation: pulse 2s infinite;
+}
+
+/* Services Page Styles */
+.services-hero {
+    padding: 120px 0 60px;
+    background: linear-gradient(
+        135deg, rgb(255, 255, 255) 0%, #ada0a6 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(230,126,34,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.5;
+}
+
+.services-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.services-hero .hero-logo {
+    max-width: 120px;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.services-hero .hero-title {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2c3e50 0%, #e67e22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-hero .hero-description {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.services-content {
+    padding: 5rem 0;
+    background: white;
+    position: relative;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(230, 126, 34, 0.1);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(230, 126, 34, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: #e67e22;
+}
+
+.service-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-icon {
+    font-size: 4rem;
+    color: #e67e22;
+    background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    min-width: 120px;
+    text-align: center;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(230, 126, 34, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-text h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.service-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e67e22, #f39c12);
+    border-radius: 2px;
+}
+
+.service-text p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.service-decoration {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.1;
+}
+
+.decoration-circle {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #e67e22;
+    border-radius: 50%;
+    position: relative;
+}
+
+.decoration-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 2px;
+    background: #e67e22;
+}
+
+/* Features Section */
+.features-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e67e22, #f39c12);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #e67e22;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 1rem;
+    background: rgba(230, 126, 34, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    background: #e67e22;
+    color: white;
+    transform: scale(1.1);
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Services CTA Section */
+.services-cta {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.services-cta .cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.services-cta h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.services-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Animation Classes */
+.animated-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animated-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design for Services Page */
+@media (max-width: 768px) {
+    .services-hero .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .services-hero .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .service-card {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .service-card:nth-child(even) {
+        flex-direction: column !important;
+    }
+    
+    .service-icon {
+        min-width: auto;
+    }
+    
+    .service-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .service-decoration {
+        display: none;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .services-cta h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-large {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .services-hero .hero-title {
+        font-size: 2rem;
+    }
+    
+    .services-hero .hero-logo {
+        max-width: 80px;
+    }
+    
+    .service-card {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .service-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-item {
+        padding: 2rem 1.5rem;
+    }
+    
+    .services-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .services-cta p {
+        font-size: 1rem;
+    }
 }
