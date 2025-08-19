@@ -305,6 +305,95 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Knowledge Vault LMS - All scripts loaded successfully!');
 });
 
+// Enhanced Intersection Observer for Services Page Animations
+const enhancedObserverOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const enhancedObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute('data-delay') || 0;
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, delay);
+        }
+    });
+}, enhancedObserverOptions);
+
+// Observe all animated elements including new services page elements
+const allAnimatedElements = document.querySelectorAll('.testimonial-card, .tech-category, .cta-content, .animated-card, .feature-item');
+allAnimatedElements.forEach(el => {
+    el.classList.add('fade-in');
+    enhancedObserver.observe(el);
+});
+
+// Services Page Specific Animations
+if (window.location.pathname.includes('services.html')) {
+    // Staggered animation for service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    // Enhanced hover effects for service cards
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) scale(1.02)';
+            const icon = this.querySelector('.service-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            const icon = this.querySelector('.service-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+
+    // Feature items enhanced interactions
+    const featureItems = document.querySelectorAll('.feature-item');
+    featureItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-12px) scale(1.03)';
+            const icon = this.querySelector('.feature-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(10deg)';
+            }
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            const icon = this.querySelector('.feature-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+
+    // Services CTA button interactions
+    const servicesCtaButtons = document.querySelectorAll('.services-cta .btn');
+    servicesCtaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const buttonText = this.textContent.trim();
+            
+            if (buttonText.includes('Get Started')) {
+                showNotification('Welcome! Let\'s get your institution started with Knowledge Vault...', 'success');
+                // Here you would typically redirect to signup or onboarding
+            } else if (buttonText.includes('Consultation')) {
+                showNotification('Consultation request submitted! Our team will contact you within 24 hours.', 'success');
+                // Here you would typically open a consultation booking form
+            }
+        });
+    });
+}
+
 // CSS for ripple effect and additional animations
 const additionalStyles = `
     .ripple {
