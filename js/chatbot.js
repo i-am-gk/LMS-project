@@ -22,18 +22,18 @@ const createChatLi = (message, className) => {
 // Generate bot response
 const generateResponse = (chatElement) => {
     const messageElement = chatElement.querySelector("p");
-    let response = "🤖 I didn’t quite catch that. You can ask me about *Services*, *Blogs*, or *Contact* details!";
+    let response = "🤖 I didn’t quite catch that. You can ask me about Services, Blogs, or Contact details!";
 
     if (userMessage.match(/\b(hi|hello|hey)\b/)) {
-        response = "👋 Hello! Great to see you here at *Knowledge Vault*. How can I assist you today?";
+        response = "👋 Hello! Great to see you here at Knowledge Vault. How can I assist you today?";
     } else if (userMessage.match(/who|your name|who are you/)) {
         response = "🤖 I’m the Knowledge Vault Assistant, here to guide you with Services, Blogs, Contact info, and more.";
     } else if (userMessage.match(/service|offer|help/)) {
-        response = "💡 We provide a range of services designed to help you grow and succeed. Please check the *Services* page for details.";
+        response = "💡 We provide a range of services designed to help you grow and succeed. Please check the Services page for details.";
     } else if (userMessage.match(/blog|articles|posts/)) {
-        response = "📝 Our *Blogs* are full of insights, knowledge, and updates. Head over to the Blogs page to explore!";
+        response = "📝 Our Blogs are full of insights, knowledge, and updates. Head over to the Blogs page to explore!";
     } else if (userMessage.match(/contact|support|reach/)) {
-        response = "📩 You can get in touch with us via the *Contact* form. We’d love to hear from you!";
+        response = "📩 You can get in touch with us via the Contact form. We’d love to hear from you!";
     } else if (userMessage.match(/thank|thanks/)) {
         response = "🙏 You’re most welcome! Always happy to help. Anything else you’d like to know?";
     } else if (userMessage.match(/bye|goodbye|see you/)) {
