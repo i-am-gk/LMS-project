@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - Knowledge Vault LMS</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+    <button class="chatbot-toggler">
+        <span class="fa-regular fa-message"></span>
+        <span class="fa-solid fa-xmark"></span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Knowledge Vault Assistant</h2>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="fa-solid fa-robot"></span>
+                <p>Hello! 👋 I am your assistant from Knowledge Vault. Ask me anything about our services, blogs, or contact details.</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="fa-solid fa-paper-plane"></span>
+        </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Knowledge Vault Logo" class="logo-img">
+                    <h2>Knowledge Vault</h2>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="connect.html" class="nav-link">Connect</a>
+                <a href="blog.html" class="nav-link">Blogs</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Connect Hero Section -->
+    <section class="connect-hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="images/logo.png" alt="Knowledge Vault Logo" class="hero-logo">
+                <h1 class="hero-title">Connect With Us</h1>
+                <p class="hero-description">Join our network of educational institutions and transform your learning management experience with Knowledge Vault.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Form Section -->
+    <section class="connect-form-section">
+        <div class="container">
+            <div class="form-container animated-card" data-delay="0">
+                <div class="form-header">
+                    <h2>Get Started Today</h2>
+                    <p>Fill out the form below and our team will get in touch with you within 24 hours.</p>
+                </div>
+                
+                <form id="connectForm" class="connect-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="institute">
+                                <i class="fas fa-university"></i>
+                                Name of Institute
+                            </label>
+                            <input type="text" id="institute" name="institute" required>
+                            <span class="form-error" id="institute-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i>
+                                Password
+                            </label>
+                            <input type="password" id="password" name="password" required minlength="6">
+                            <span class="form-error" id="password-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="form-error" id="phone-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="province">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Province
+                            </label>
+                            <select id="province" name="province" required>
+                                <option value="">Select Province</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Sindh">Sindh</option>
+                                <option value="KPK">Khyber Pakhtunkhwa (KPK)</option>
+                                <option value="Balochistan">Balochistan</option>
+                                <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+                                <option value="AJK">Azad Jammu & Kashmir (AJK)</option>
+                            </select>
+                            <span class="form-error" id="province-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">
+                                <i class="fas fa-city"></i>
+                                City
+                            </label>
+                            <select id="city" name="city" required>
+                                <option value="">Select City</option>
+                                <option value="Karachi">Karachi</option>
+                                <option value="Lahore">Lahore</option>
+                                <option value="Islamabad">Islamabad</option>
+                                <option value="Rawalpindi">Rawalpindi</option>
+                                <option value="Faisalabad">Faisalabad</option>
+                                <option value="Multan">Multan</option>
+                                <option value="Peshawar">Peshawar</option>
+                                <option value="Quetta">Quetta</option>
+                                <option value="Sialkot">Sialkot</option>
+                                <option value="Gujranwala">Gujranwala</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Bahawalpur">Bahawalpur</option>
+                            </select>
+                            <span class="form-error" id="city-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            I have read and agree to the <a href="#" class="terms-link">terms and conditions</a>
+                        </label>
+                        <span class="form-error" id="terms-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Submit Application</span>
+                        <span class="btn-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                </form>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-content">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Submission Successful</h3>
+                        <p>Thank you for your interest! Our team will contact you within 24 hours.</p>
+                        <div class="redirect-info">
+                            <span>Redirecting to homepage in <span id="countdown">3</span> seconds...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Knowledge Vault</h3>
+                    <p>Empowering education through innovative learning management solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Knowledge Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK + Form Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyCkYGQqluHcB3zYmbkjMocftUh-vn44UJM",
+            authDomain: "connectformproject-a7460.firebaseapp.com",
+            projectId: "connectformproject-a7460",
+            storageBucket: "connectformproject-a7460.firebasestorage.app",
+            messagingSenderId: "215163318170",
+            appId: "1:215163318170:web:a722919405afa018d45423"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        // Initialize EmailJS
+        emailjs.init("xoQle9d48_DAfMUQv");
+        
+        // Form submission handler
+        document.getElementById('connectForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            const form = document.getElementById('connectForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            
+            // Clear previous errors
+            document.querySelectorAll('.form-error').forEach(error => {
+                error.textContent = '';
+            });
+            
+            try {
+                // Get form data
+                const formData = new FormData(form);
+                const institute = formData.get('institute');
+                const email = formData.get('email');
+                const password = formData.get('password');
+                const phone = formData.get('phone');
+                const province = formData.get('province');
+                const city = formData.get('city');
+                
+                const data = {
+                    institute: institute,
+                    email: email,
+                    password: password,
+                    phone: phone,
+                    province: province,
+                    city: city,
+                    createdAt: serverTimestamp()
+                };
+                
+                // Add document to Firestore
+                await addDoc(collection(db, 'connectFormSubmissions'), data)
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    
+                    // Send EmailJS notification
+                    emailjs.send("service_m3ipc0j", "template_i528b7c", {
+                        to_email: "ghanikhan1014@gmail.com",
+                        institute: institute,
+                        email: email,
+                        phone: phone,
+                        province: province,
+                        city: city
+                    })
+                    .then(function(response) {
+                        console.log("Email sent successfully ", response);
+                    }, function(error) {
+                        console.error("Email failed ", error);
+                    });
+                    
+                    // Show success message + redirect
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    successMessage.classList.add('show');
+                    
+                    let countdown = 3;
+                    const countdownElement = document.getElementById('countdown');
+                    
+                    const countdownInterval = setInterval(() => {
+                        countdown--;
+                        countdownElement.textContent = countdown;
+                        
+                        if (countdown <= 0) {
+                            clearInterval(countdownInterval);
+                            window.location.href = 'index.html';
+                        }
+                    }, 1000);
+                });
+                
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('There was an error submitting your form. Please try again.');
+                
+                // Reset button
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline-block';
+                btnLoader.style.display = 'none';
+            }
+        });
+        
+        // Validation
+        function validateForm() {
+            let isValid = true;
+            
+            const institute = document.getElementById('institute').value.trim();
+            if (institute.length < 2) {
+                document.getElementById('institute-error').textContent = 'Institute name must be at least 2 characters';
+                isValid = false;
+            }
+            
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+            
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+            
+            const phone = document.getElementById('phone').value.trim();
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('phone-error').textContent = 'Please enter a valid phone number';
+                isValid = false;
+            }
+            
+            if (!document.getElementById('province').value) {
+                document.getElementById('province-error').textContent = 'Please select a province';
+                isValid = false;
+            }
+            
+            if (!document.getElementById('city').value) {
+                document.getElementById('city-error').textContent = 'Please select a city';
+                isValid = false;
+            }
+            
+            if (!document.getElementById('terms').checked) {
+                document.getElementById('terms-error').textContent = 'You must agree to the terms and conditions';
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+        
+        document.querySelectorAll('input, select').forEach(field => {
+            field.addEventListener('blur', validateForm);
+            field.addEventListener('input', function() {
+                const errorElement = document.getElementById(this.name + '-error');
+                if (errorElement) errorElement.textContent = '';
+            });
+        });
+    </script>
+
+   <!-- Terms & Conditions Modal -->
+<div id="termsModal" 
+style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+       background:rgba(0,0,0,0.6); z-index:9999; overflow:auto;">
+
+<div style="background:#fff; margin:5% auto; padding:20px; max-width:800px; border-radius:8px; position:relative; max-height:85vh; overflow-y:auto;">
+
+<h2>Terms and Conditions for Knowledge Vault</h2>
+<p><strong>Last Updated:</strong> August 25, 2025</p>
+
+<div class="terms-text">
+ <h3>1. Introduction</h3>
+ <p>Welcome to Knowledge Vault LXP Service, operated by our company. These Terms of Service govern your use of our website (knskills.com). By accessing or using the Service, you agree to comply with these Terms and our Privacy Policy. If you disagree, discontinue use immediately and notify us at kvlxps@gmail.com</p>
+
+ <h3>2. Communications</h3>
+ <p>By using the Service, you consent to receive newsletters, marketing materials, and updates. Opt out via the unsubscribe link or by emailing kvlxps@gmail.com</p>
+
+ <h3>3. Purchases & Payments</h3>
+ <ul>
+   <li>Payment Information: Purchases require valid payment details (e.g., card number, billing address).</li>
+   <li>Accuracy: You warrant that all provided information is truthful and complete.</li>
+   <li>Third-Party Processors: Payments are facilitated by third-party services (subject to our Privacy Policy).</li>
+   <li>Order Refusal/Cancellation: We reserve the right to cancel orders due to errors, fraud, or availability issues.</li>
+ </ul>
+
+ <h3>4. Promotions, Refunds, and Content</h3>
+ <ul>
+   <li>Promotions: Separate rules may apply; conflicts with these Terms will defer to Promotion rules.</li>
+   <li>Refunds: Issued within 30 days of purchase (where applicable).</li>
+   <li>User-Generated Content: You retain ownership but grant us a license to use, modify, and distribute content posted on the Service.</li>
+   <li>Prohibited Content: Illegal, infringing, or harmful material will result in account termination.</li>
+ </ul>
+
+ <h3>5. Prohibited Uses</h3>
+ <p>You agree not to use the Service to: violate laws, send spam, infringe intellectual property, disrupt operations, or use automated tools without consent.</p>
+
+ <h3>6. Accounts</h3>
+ <p>Users must be 18+. You are responsible for account activity. We may suspend accounts for violations or misuse.</p>
+
+ <h3>7. Intellectual Property</h3>
+ <p>Service content is owned by Knowledge Vault and protected by copyright/trademark laws.</p>
+
+ <h3>8. Third-Party Links & Disclaimer</h3>
+ <p>We are not responsible for third-party content. Service is provided “as is.”</p>
+
+ <h3>9. Limitation of Liability</h3>
+ <p>We are not liable for indirect damages. Liability is limited to the amount paid for Services.</p>
+
+ <h3>10. Termination & Governing Law</h3>
+ <p>We may terminate access without notice. Governed by U.S. law.</p>
+
+ <h3>11. Changes to Terms</h3>
+ <p>Revised Terms are binding upon posting. Continued use constitutes acceptance.</p>
+
+ <h3>12. Contact Us</h3>
+ <p>Email: kvlxps@gmail.com<br>WhatsApp: +92 336 0947795</p>
+
+ <p><strong>BY USING THE SERVICE, YOU ACKNOWLEDGE READING AND AGREEING TO THESE TERMS.</strong></p>
+</div>
+
+<button id="closeTerms" 
+       style="margin-top:20px; padding:10px 18px; background:#007BFF; color:white; border:none; border-radius:5px; cursor:pointer;">
+ Close
+</button>
+</div>
+</div>
+<script>
+    const termsLink = document.querySelector('.terms-link');
+    const termsModal = document.getElementById('termsModal');
+    const closeTerms = document.getElementById('closeTerms');
+  
+    // Open modal
+    termsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      termsModal.style.display = 'block';
+    });
+  
+    // Close with button
+    closeTerms.addEventListener('click', function() {
+      termsModal.style.display = 'none';
+    });
+  
+    // Close when clicking outside the white box
+    window.addEventListener('click', function(e) {
+      if (e.target === termsModal) {
+        termsModal.style.display = 'none';
+      }
+    });
+  </script>
+  
+
+    <!-- Other JS -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
