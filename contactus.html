@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Knowledge Vault</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/contactus.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Chatbot -->
+  <button class="chatbot-toggler">
+    <span class="fa-regular fa-message"></span>
+    <span class="fa-solid fa-xmark"></span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Knowledge Vault Assistant</h2>
+    </header>
+    <ul class="chatbox"></ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="fa-solid fa-paper-plane"></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Knowledge Vault Logo" class="logo-img">
+          <h2>Knowledge Vault</h2>
+        </a>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="connect.html" class="nav-link">Connect</a>
+        <a href="blog.html" class="nav-link">Blogs</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Hero -->
+  <section class="contactus-hero">
+    <div class="container">
+      <div class="hero-content">
+        <img src="images/logo.png" alt="Knowledge Vault Logo" class="hero-logo">
+        <h1 class="hero-title">Contact Us</h1>
+        <p class="hero-description">We’d love to hear from you. Reach us through any of the channels below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="blog-content-section">
+    <div class="container">
+      <div class="blog-post">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions, feedback, or collaboration ideas, feel free to reach us directly:</p>
+
+        <div class="contact-info">
+          <p><i class="fa-solid fa-envelope"></i> Email: 
+            <a href="mailto:kvlxps@gmail.com">kvlxps@gmail.com</a>
+          </p>
+          <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: 
+            <a href="https://wa.me/923360947795" target="_blank">+92 336 0947795</a>
+          </p>
+          <p><i class="fa-solid fa-phone"></i> Phone: 
+            <a href="tel:+923360947795">+92 336 0947795</a>
+          </p>
+        </div>
+
+        <h3>Office Hours</h3>
+        <p>Monday – Saturday: 9:00 AM – 7:00 PM<br>Sunday: Closed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="about-cta">
+    <div class="container">
+      <div class="cta-content animated-card">
+        <h2>Let's Connect Today</h2>
+        <p>Whether you’re a student, teacher, or institution, Knowledge Vault is here to support your journey.</p>
+        <div class="cta-buttons">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kvlxps@gmail.com" target="_blank" class="btn btn-primary btn-large">Email Us</a>
+          <a href="https://api.whatsapp.com/send?phone=923360947795&text=Hello%20Knowledge%20Vault%2C%20I%20want%20to%20connect!" target="_blank" class="btn btn-outline btn-large">
+            Chat on WhatsApp
+          </a>          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <script src="js/script.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

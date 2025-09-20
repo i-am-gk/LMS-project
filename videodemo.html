@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Demos</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Knowledge Vault Logo" class="logo-img">
+                    <h2>Knowledge Vault</h2>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="connect.html" class="nav-link">Connect</a>
+                <a href="blog.html" class="nav-link">Blogs</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <img src="images/logo.png" alt="Knowledge Vault Logo" class="hero-logo">
+                    <h1 class="hero-title">Video Demos</h1>
+                    <p class="hero-description"> Watch our video demos to learn more about Knowledge Vault.</p>
+                </div>
+            </div>
+        </section>
+
+  <!-- Card Layout -->
+<section class="offerings-grid container">
+  <!-- LMS Tutorial Demo -->
+  <div class="offering-card">
+    <i class="offering-icon fa fa-chalkboard-teacher"></i>
+    <h3>LMS Tutorial Demo</h3>
+    <p>
+      Explore how our Learning Management System (LMS) works with a step-by-step tutorial demo designed for teachers and students.
+    </p>
+    <a href="demo.html" class="btn btn-primary">View Demo</a>
+  </div>
+
+  <!-- QEC Demo -->
+  <div class="offering-card">
+    <i class="offering-icon fa fa-check-circle"></i>
+    <h3>QEC (Quality Enhancement Cell) Demo</h3>
+    <p>
+      Get an inside look at how our QEC module helps monitor and improve the quality of academic processes in institutions.
+    </p>
+    <a href="comingsoon.html" class="btn btn-primary">View Demo</a>
+  </div>
+
+  <!-- Entry Test Preparation Academy Demo -->
+  <div class="offering-card">
+    <i class="offering-icon fa fa-graduation-cap"></i>
+    <h3>Entry Test Preparation Academy Demo</h3>
+    <p>
+      Experience our Entry Test Prep Academy demo with interactive study material, quizzes, and progress tracking for students.
+    </p>
+    <a href="comingsoon.html" class="btn btn-primary">View Demo</a>
+  </div>
+</section>
+
+     <!-- Call to Action Section -->
+     <section class="about-cta">
+      <div class="container">
+          <div class="cta-content animated-card">
+              <h2>Ready to Join Our Success Story?</h2>
+              <p>Discover how Knowledge Vault can transform your institution's educational delivery and management processes. Let's build the future of education together.</p>
+              <div class="cta-buttons">
+                  <button class="btn btn-primary btn-large">Start Your Journey</button>
+                  <button class="btn btn-outline btn-large">Learn More</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

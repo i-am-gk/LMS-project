@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo - Knowledge Vault LMS</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/chatbot.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button class="chatbot-toggler">
+      <span class="fa-regular fa-message"></span>
+      <span class="fa-solid fa-xmark"></span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>Knowledge Vault Assistant</h2>
+      </header>
+      <ul class="chatbox">
+        <!-- Welcome message will be injected by JS -->
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn" class="fa-solid fa-paper-plane"></span>
+      </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Knowledge Vault Logo"
+              class="logo-img"
+            />
+            <h2>Knowledge Vault</h2>
+          </a>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="connect.html" class="nav-link">Connect</a>
+          <a href="blog.html" class="nav-link">Blogs</a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+   <!-- Demo Hero Section -->
+<section class="about-hero">
+  <div class="container">
+    <div class="hero-content">
+      <img src="images/logo.png" alt="Knowledge Vault Logo" class="hero-logo">
+      <h1 class="hero-title">Knowledge Vault LMS</h1>
+      <p class="hero-description">
+        Experience a modern Learning Management System that simplifies teaching, enhances student engagement, and empowers institutions to manage education seamlessly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="video-section">
+  <div class="container">
+    <div class="video-card">
+      <video controls poster="images/video-thumbnail.jpg">
+        <source src="videos/demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- Description Section -->
+<section class="description-section">
+  <div class="container">
+    <h2 class="section-title">Why Choose Knowledge Vault LMS?</h2>
+    <ul class="lms-features">
+      <li><i class="fa-solid fa-check-circle"></i> User-friendly dashboards for teachers and students</li>
+      <li><i class="fa-solid fa-check-circle"></i> Automated attendance, grading, and timetable management</li>
+      <li><i class="fa-solid fa-check-circle"></i> Seamless assignment upload, tracking, and feedback</li>
+      <li><i class="fa-solid fa-check-circle"></i> Secure cloud-based data storage and accessibility</li>
+      <li><i class="fa-solid fa-check-circle"></i> Customizable modules for institutions of all sizes</li>
+    </ul>
+  </div>
+</section>
+
+ <!-- Call to Action Section -->
+ <section class="about-cta">
+  <div class="container">
+      <div class="cta-content animated-card">
+          <h2>Ready to Join Our Success Story?</h2>
+          <p>Discover how Knowledge Vault can transform your institution's educational delivery and management processes. Let's build the future of education together.</p>
+          <div class="cta-buttons">
+              <button class="btn btn-primary btn-large">Start Your Journey</button>
+              <button class="btn btn-outline btn-large">Learn More</button>
+          </div>
+      </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+</script>
+
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>

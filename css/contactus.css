@@ -1,0 +1,161 @@
+/* =========================
+   Contact Us Page Styles
+   ========================= */
+
+/* ---------- Hero Section ---------- */
+.contactus-hero {
+    padding: 120px 0 60px;
+    background: url("../images/prv1.jpg") no-repeat center center/cover; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactus-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.6); /* overlay */
+    opacity: 0.5;
+}
+
+.contactus-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.contactus-hero .hero-logo {
+    max-width: 120px;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.contactus-hero .hero-title {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2c3e50 0%, #e67e22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contactus-hero .hero-description {
+    font-size: 1.3rem;
+    color: black;
+    max-width: 700px;
+    font-weight: 700;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .contactus-hero .hero-title {
+        font-size: 2.2rem;
+    }
+    .contactus-hero .hero-description {
+        font-size: 1.1rem;
+    }
+}
+
+/* ---------- Contact Info Box ---------- */
+.contact-info {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    font-size: 1.3rem;
+    color: #e67e22;
+    flex-shrink: 0;
+}
+
+.contact-info a {
+    color: #2c3e50;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #e67e22;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-large {
+    font-size: 1.1rem;
+    padding: 14px 30px;
+}
+
+.btn-primary {
+    background: #e67e22;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #cf6517;
+}
+
+.btn-outline {
+    border: 2px solid #e67e22;
+    color: #e67e22;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: #e67e22;
+    color: #fff;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

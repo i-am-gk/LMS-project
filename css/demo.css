@@ -1,0 +1,51 @@
+/* Video Section Styling */
+.video-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    max-width: 900px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  }
+  .video-card video {
+    width: 100%;
+    border-radius: 0.8rem;
+    display: block;
+  }
+  
+  /* Description / Features Section */
+  .description-section {
+    padding: 4rem 1.5rem;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  .description-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  .lms-features {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+  }
+  .lms-features li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: #444;
+  }
+  .lms-features li i {
+    color: #007bff;
+    margin-right: 0.6rem;
+    font-size: 1.2rem;
+  }
+  
